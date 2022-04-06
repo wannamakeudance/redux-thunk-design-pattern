@@ -24,6 +24,7 @@ import rootReducer from './reducers/index'
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 ```
+The whole demo you can refer to my [codesandbox](https://codesandbox.io/s/heuristic-currying-d3yvgi?file=/src/reducers.js).
 
 ## How
 - If you can't understand middlewares' theory, you can refer to [this aticle](https://github.com/wannamakeudance/redux-middleware-pattern)
