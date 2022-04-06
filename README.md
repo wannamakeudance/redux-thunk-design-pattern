@@ -14,3 +14,13 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ## How
 - If you can't understand middlewares' theory, you can refer to [this aticle](https://github.com/wannamakeudance/redux-middleware-pattern)
+
+```javascript
+const thunk = ({dispatch, getState}) => next => action => {
+    if (typeof action  === 'function') {
+        return action({dispatch, getState});
+    } else {
+        return next(action);
+    }
+};
+```
