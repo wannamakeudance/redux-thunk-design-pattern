@@ -9,7 +9,7 @@ setTimeout(() => {
     store.dispatch({
         type: "ACTION_TYPE",
         payload: {
-
+            number: 1
         }
     });
 }, 1000);
