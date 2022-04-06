@@ -15,7 +15,7 @@ setTimeout(() => {
 }, 1000);
 ```
 
-- In order to meet these requirements, it's necessary to use redux-thunk.
+- In order to meet the requirement, it's necessary to use redux-thunk middleware.
 
 ```javascript
 import { createStore, applyMiddleware } from 'redux'
@@ -29,10 +29,11 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 - If you can't understand middlewares' theory, you can refer to [this aticle](https://github.com/wannamakeudance/redux-middleware-pattern)
 
 ```javascript
-const thunk = ({dispatch, getState}) => next => action => {
+const thunk = store => next => action => {
     if (typeof action  === 'function') {
-        return action({dispatch, getState});
+        return action(store);
     } else {
+        // give this to next middleware
         return next(action);
     }
 };
