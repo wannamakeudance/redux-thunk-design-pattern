@@ -13,4 +13,4 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 ```
 
 ## How
-
+- If you can't understand middlewares' theory, you can refer to [this aticle](https://github.com/wannamakeudance/redux-middleware-pattern)
